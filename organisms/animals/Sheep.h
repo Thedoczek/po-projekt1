@@ -4,7 +4,7 @@
 
 class Sheep : public Animal {
 public:
-	Sheep();
+	Sheep(int x, int y);
 	void draw() override;
 };
 

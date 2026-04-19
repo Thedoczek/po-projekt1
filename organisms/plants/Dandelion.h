@@ -4,7 +4,7 @@
 
 class Dandelion : public Plant {
 public:
-	Dandelion();
+	Dandelion(int x, int y);
 
 	void action() override;
 	void draw() override;

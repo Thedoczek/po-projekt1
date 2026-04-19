@@ -4,7 +4,7 @@
 
 class Fox : public Animal {
 public:
-	Fox();
+	Fox(int x, int y);
 	void action() override;
 	void draw() override;
 };

@@ -4,7 +4,7 @@
 
 class Grass : public Plant {
 public:
-	Grass();
+	Grass(int x, int y);
 	void draw() override;
 };
 

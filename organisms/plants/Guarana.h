@@ -8,7 +8,7 @@
 
 class Guarana : public Plant {
 public:
-	Guarana();
+	Guarana(int x, int y);
 
 	void collision() override;
 	void draw() override;

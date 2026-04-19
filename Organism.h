@@ -14,6 +14,7 @@ public:
 protected:
 	int force;
 	int initiative;
+	int age;
 	int pos_x;
 	int pos_y;
 	World* world;
