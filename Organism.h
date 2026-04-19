@@ -5,11 +5,13 @@
 
 class Organism {
 public:
-	virtual void action();
-	virtual void collision();
-	virtual void draw();
-	virtual ~Organism();
-private:
+	virtual void action() = 0;
+	virtual void collision() = 0;
+	virtual void draw() = 0;
+
+	virtual ~Organism() = default;
+
+protected:
 	int force;
 	int initiative;
 	int pos_x;
