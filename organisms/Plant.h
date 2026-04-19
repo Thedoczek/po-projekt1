@@ -7,7 +7,8 @@ public:
 	Plant(World* world, int pos_x, int pos_y, int strength);
 
 	void action() override;
-	void collision(int pos_x, int pos_y) override;
+	void attack(int pos_x, int pos_y) override;
+	DefendResult defend(Organism* attacker) override;
 	void draw() override = 0;
 };
 

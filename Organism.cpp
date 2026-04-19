@@ -6,7 +6,16 @@ Organism::Organism(
 		pos_x(pos_x),
 		pos_y(pos_y),
 		initiative(initiative),
-		strength(strength)
-{
-	age = 0;
+		strength(strength) {}
+
+int Organism::get_initiative() const {
+	return initiative;
+}
+
+int Organism::get_age() const {
+	return age;
+}
+
+int Organism::is_alive() const {
+	return alive;
 }
