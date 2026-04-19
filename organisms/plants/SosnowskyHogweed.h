@@ -4,7 +4,7 @@
 
 class SosnowskyHogweed : public Plant {
 public:
-	SosnowskyHogweed(int x, int y);
+	SosnowskyHogweed(World* world, int pos_x, int pos_y);
 
 	void action() override;
 	void collision() override;

@@ -4,7 +4,7 @@
 
 class Fox : public Animal {
 public:
-	Fox(int x, int y);
+	Fox(World* world, int pos_x, int pos_y);
 	void action() override;
 	void draw() override;
 };

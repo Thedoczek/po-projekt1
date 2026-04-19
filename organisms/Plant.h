@@ -4,6 +4,8 @@
 
 class Plant : public Organism {
 public:
+	Plant(World* world, int pos_x, int pos_y, int strength);
+
 	virtual void action();
 	virtual void collision();
 	virtual void draw() = 0;

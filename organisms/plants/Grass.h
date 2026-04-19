@@ -4,7 +4,7 @@
 
 class Grass : public Plant {
 public:
-	Grass(int x, int y);
+	Grass(World* world, int pos_x, int pos_y);
 	void draw() override;
 };
 

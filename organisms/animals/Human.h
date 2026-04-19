@@ -4,7 +4,7 @@
 
 class Human : public Animal {
 public:
-	Human(int x, int y);
+	Human(World* world, int pos_x, int pos_y);
 
 	void action() override;
 	void collision() override;
