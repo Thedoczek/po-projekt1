@@ -8,6 +8,13 @@ Organism::Organism(
 		initiative(initiative),
 		strength(strength) {}
 
+int Organism::get_pos_x() const {
+	return pos_x;
+}
+int Organism::get_pos_y() const {
+	return pos_y;
+}
+
 int Organism::get_initiative() const {
 	return initiative;
 }
@@ -16,6 +23,6 @@ int Organism::get_age() const {
 	return age;
 }
 
-int Organism::is_alive() const {
+bool Organism::is_alive() const {
 	return alive;
 }

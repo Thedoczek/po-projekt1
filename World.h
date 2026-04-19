@@ -19,6 +19,8 @@ public:
 	void add_survivor(Organism* organism);
 	void add_killed(Organism* organism);
 
+	void move_organism(Organism *organism, int new_x, int new_y);
+
 	~World();
 private:
 	std::vector<Organism*> queue;

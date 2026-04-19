@@ -18,6 +18,8 @@ public:
 	virtual DefendResult defend(Organism* attacker) = 0;
 	virtual void draw() = 0;
 
+	int get_pos_x() const;
+	int get_pos_y() const;
 	int get_initiative() const;
 	int get_age() const;
 	bool is_alive() const;

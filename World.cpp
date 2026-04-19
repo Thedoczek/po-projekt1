@@ -50,7 +50,10 @@ void World::add_killed(Organism *organism) {
 	kill_queue.push_back(organism);
 }
 
-
+void World::move_organism(Organism* organism, const int new_x, const int new_y) {
+	map[new_x*size_y + new_y] = organism;
+	map[organism->get_pos_x()*size_y + organism->get_pos_y()] = nullptr;
+}
 
 World::~World() {
 	delete[] map;
