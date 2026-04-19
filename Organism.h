@@ -7,7 +7,7 @@ class Organism {
 public:
 	Organism(World* world, int pos_x, int pos_y, int strength, int initiative);
 	virtual void action() = 0;
-	virtual void collision() = 0;
+	virtual void collision(int pos_x, int pos_y) = 0;
 	virtual void draw() = 0;
 
 	virtual ~Organism() = default;

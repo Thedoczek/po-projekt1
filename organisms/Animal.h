@@ -7,7 +7,7 @@ public:
 	Animal(World* world, int pos_x, int pos_y, int strength, int initiative);
 
 	void action() override;
-	void collision() override;
+	void collision(int pos_x, int pos_y) override;
 	void draw() override = 0;
 };
 

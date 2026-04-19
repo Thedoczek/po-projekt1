@@ -6,9 +6,9 @@ class Plant : public Organism {
 public:
 	Plant(World* world, int pos_x, int pos_y, int strength);
 
-	virtual void action();
-	virtual void collision();
-	virtual void draw() = 0;
+	void action() override;
+	void collision(int pos_x, int pos_y) override;
+	void draw() override = 0;
 };
 
 #endif //PROJEKT1_PLANT_H

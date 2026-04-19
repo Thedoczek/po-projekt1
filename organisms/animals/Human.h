@@ -7,7 +7,7 @@ public:
 	Human(World* world, int pos_x, int pos_y);
 
 	void action() override;
-	void collision() override;
+	void collision(int pos_x, int pos_y) override;
 	void draw() override;
 };
 

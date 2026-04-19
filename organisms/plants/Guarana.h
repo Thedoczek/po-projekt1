@@ -10,7 +10,7 @@ class Guarana : public Plant {
 public:
 	Guarana(World* world, int pos_x, int pos_y);
 
-	void collision() override;
+	void collision(int pos_x, int pos_y) override;
 	void draw() override;
 };
 
