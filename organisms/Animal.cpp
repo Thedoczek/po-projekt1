@@ -14,6 +14,7 @@ void Animal::action() {
 
 		switch (occupant ? occupant->defend(this) : DefendResult::MOVE_ATTACKER) {
 			case DefendResult::MOVE_ATTACKER:
+				world->move_organism(this, new_pos);
 				pos = new_pos;
 				break;
 			case DefendResult::STOP_ATTACKER:
@@ -23,6 +24,7 @@ void Animal::action() {
 				break;
 			case DefendResult::GIVE_3_STRENGTH:
 				strength += 3;
+				world->move_organism(this, new_pos);
 				pos = new_pos;
 				break;
 		}

@@ -36,7 +36,7 @@ Position Organism::pick_empty_neighbor(const int radius) const {
 
 	for (int x = min_x; x <= max_x; ++x) {
 		for (int y = min_y; y <= max_y; ++y) {
-			if (Position check_pos{x, y}; world->get_occupant(check_pos)) {
+			if (Position check_pos{x, y}; !world->get_occupant(check_pos)) {
 				free_positions.push_back(check_pos);
 			}
 		}

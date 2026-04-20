@@ -8,6 +8,7 @@ World::World(const int size_x, const int size_y) : size_x(size_x), size_y(size_y
 }
 
 void World::perform_turn() {
+	// Sort queue by initiative
 	std::ranges::sort(queue, [](const Organism *a, const Organism *b) {
 		if (a->get_initiative() == b->get_initiative()) {
 			return a->get_age() > b->get_age();
@@ -15,11 +16,20 @@ void World::perform_turn() {
 		return a->get_initiative() > b->get_initiative();
 	});
 
+	// Perform actions
 	const int initial_size = static_cast<int>(queue.size());
 	for (int i = 0; i < initial_size; ++i) {
 		if (queue[i]->is_alive()) queue[i]->action();
 	}
 
+	// Remove dead animals from the map
+	for (int i = 0; i < size_x * size_y; ++i) {
+		if (map[i] && !map[i]->is_alive()) {
+			map[i] = nullptr;
+		}
+	}
+
+	// Remove dead animals from the queue, removing memory
 	std::erase_if(queue, [](const Organism *elem) {
 		if (!elem->is_alive()) {
 			delete elem;
@@ -27,6 +37,7 @@ void World::perform_turn() {
 		}
 		return false;
 	});
+	// I know these comments look like written by AI, I swear they're not
 }
 
 Organism *World::get_occupant(const Position pos) const {
@@ -43,6 +54,9 @@ int World::get_size_y() const {
 
 void World::add_spawn(Organism *spawn) {
 	queue.push_back(spawn);
+	// ReSharper disable once CppUseStructuredBinding
+	Position const pos = spawn->get_pos();
+	map[pos.x * size_y + pos.y] = spawn;
 }
 
 // ReSharper disable once CppMemberFunctionMayBeConst
