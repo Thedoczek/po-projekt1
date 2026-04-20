@@ -41,7 +41,12 @@ void World::perform_turn() {
 }
 
 Organism *World::get_occupant(const Position pos) const {
-	return map[pos.x * size_y + pos.y];
+	Organism *occupant = map[pos.x * size_y + pos.y];
+	if (occupant && !occupant->is_alive()) {
+		return nullptr;
+	}
+
+	return occupant;
 }
 
 int World::get_size_x() const {
@@ -68,5 +73,8 @@ void World::move_organism(Organism *organism, const Position new_pos) {
 }
 
 World::~World() {
+	for (const Organism *elem: queue) {
+		delete elem;
+	}
 	delete[] map;
 }

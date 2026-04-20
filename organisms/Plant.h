@@ -2,13 +2,15 @@
 #define PROJEKT1_PLANT_H
 #include "../Organism.h"
 
-#define PLANT_SPREAD_FACTOR 4	// One in N attempts are a success.
+#define PLANT_SPREAD_FACTOR 10	// One in N attempts are a success.
 
 class Plant : public Organism {
 public:
 	Plant(World *world, Position pos, int strength);
 
 	void action() override;
+
+	DefendResult defend(Organism *attacker) override;
 
 	void draw() override = 0;
 };

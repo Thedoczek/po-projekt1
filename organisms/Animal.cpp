@@ -1,6 +1,6 @@
 #include "Animal.h"
 
-#include <random>
+#include <typeinfo>
 
 Animal::Animal(
 	World *world, const Position pos, const int strength, const int initiative) : Organism(
@@ -33,4 +33,21 @@ void Animal::action() {
 	if (alive) {
 		age += 1;
 	}
+}
+
+Organism::DefendResult Animal::defend(Organism *attacker) {
+	if (typeid(*attacker) == typeid(*this)) {
+		if (Position const birth_pos = pick_empty_neighbor(1); birth_pos != pos) {
+			world->add_spawn(spawn(birth_pos));
+		}
+
+		return DefendResult::STOP_ATTACKER;
+	}
+
+	if (attacker->get_strength() > strength || (attacker->get_strength() == strength && attacker->get_age() > age)) {
+		alive = false;
+		return DefendResult::MOVE_ATTACKER;
+	}
+
+	return DefendResult::KILL_ATTACKER;
 }

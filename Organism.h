@@ -19,7 +19,7 @@ public:
 
 	virtual void action() = 0;
 
-	virtual DefendResult defend(Organism *attacker);
+	virtual DefendResult defend(Organism *attacker) = 0;
 
 	virtual void draw() = 0;
 
@@ -32,6 +32,8 @@ public:
 	[[nodiscard]] int get_age() const;
 
 	[[nodiscard]] bool is_alive() const;
+
+	void kill();
 
 	virtual ~Organism() = default;
 

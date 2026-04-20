@@ -7,7 +7,9 @@ public:
 	Animal(World *world, Position pos, int strength, int initiative);
 
 	void action() override;
-	
+
+	DefendResult defend(Organism *attacker) override;
+
 	void draw() override = 0;
 };
 

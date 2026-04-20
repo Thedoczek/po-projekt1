@@ -12,3 +12,8 @@ void Plant::action() {
 		}
 	}
 }
+
+Organism::DefendResult Plant::defend(Organism *attacker) {
+	alive = false;
+	return DefendResult::MOVE_ATTACKER;
+}

@@ -1,8 +1,8 @@
 #include "Wolf.h"
 
-Wolf::Wolf(World *world, Position pos) : Animal(world, pos, 9, 5) {
+Wolf::Wolf(World *world, const Position pos) : Animal(world, pos, 9, 5) {
 }
 
-Organism *Wolf::spawn(Position pos) const {
+Organism *Wolf::spawn(const Position pos) const {
 	return new Wolf(world, pos);
 }

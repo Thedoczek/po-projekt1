@@ -1,7 +1,6 @@
 #include "Organism.h"
 
 #include <random>
-#include <typeinfo>
 
 Organism::Organism(
 	World *const world, const Position pos, const int strength, const int initiative) : strength(strength),
@@ -49,23 +48,6 @@ Position Organism::pick_empty_neighbor(const int radius) const {
 	return free_positions[random() % free_positions.size()];
 }
 
-Organism::DefendResult Organism::defend(Organism *attacker) {
-	if (typeid(*attacker) == typeid(*this)) {
-		if (Position const birth_pos = pick_empty_neighbor(1); birth_pos != pos) {
-			world->add_spawn(spawn(birth_pos));
-		}
-
-		return DefendResult::STOP_ATTACKER;
-	}
-
-	if (attacker->get_strength() > strength || (attacker->get_strength() == strength && attacker->get_age() > age)) {
-		alive = false;
-		return DefendResult::MOVE_ATTACKER;
-	} else {
-		return DefendResult::KILL_ATTACKER;
-	}
-}
-
 Position Organism::get_pos() const {
 	return pos;
 }
@@ -84,4 +66,8 @@ int Organism::get_age() const {
 
 bool Organism::is_alive() const {
 	return alive;
+}
+
+void Organism::kill() {
+	alive = false;
 }
