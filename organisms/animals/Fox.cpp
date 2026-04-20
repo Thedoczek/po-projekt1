@@ -14,7 +14,7 @@ void Fox::action() {
 		// ReSharper disable once CppTooWideScopeInitStatement
 		Organism *occupant = world->get_occupant(new_pos);
 
-		if (typeid(*occupant) == typeid(*this) || occupant->get_strength() <= strength) {
+		if (!occupant || typeid(*occupant) == typeid(*this) || occupant->get_strength() <= strength) {
 			switch (occupant ? occupant->defend(this) : DefendResult::MOVE_ATTACKER) {
 				case DefendResult::MOVE_ATTACKER:
 					world->move_organism(this, new_pos);

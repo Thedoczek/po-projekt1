@@ -1,4 +1,5 @@
 #include "SosnowskyHogweed.h"
+#include "../Animal.h"
 
 SosnowskyHogweed::SosnowskyHogweed(World *world, const Position pos) : Plant(world, pos, 10) {
 }
@@ -17,11 +18,13 @@ void SosnowskyHogweed::action() {
 	for (int x = min_x; x <= max_x; ++x) {
 		for (int y = min_y; y <= max_y; ++y) {
 			if (Organism *occupant = world->get_occupant(Position{x, y})) {
-				occupant->kill();
+				if (dynamic_cast<Animal *>(occupant)) {
+					occupant->kill();
+				}
 			}
 		}
 	}
-	
+
 	Plant::action();
 }
 
