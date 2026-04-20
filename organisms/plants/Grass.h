@@ -4,7 +4,10 @@
 
 class Grass : public Plant {
 public:
-	Grass(World* world, Position pos);
+	Grass(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
+
 	void draw() override;
 };
 

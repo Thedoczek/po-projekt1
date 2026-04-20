@@ -4,10 +4,14 @@
 
 class SosnowskyHogweed : public Plant {
 public:
-	SosnowskyHogweed(World* world, Position pos);
+	SosnowskyHogweed(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
 
 	void action() override;
-	DefendResult defend(Organism* attacker) override;
+
+	DefendResult defend(Organism *attacker) override;
+
 	void draw() override;
 };
 

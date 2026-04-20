@@ -4,10 +4,14 @@
 
 class Turtle : public Animal {
 public:
-	Turtle(World* world, Position pos);
+	Turtle(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
 
 	void action() override;
-	DefendResult defend(Organism* attacker) override;
+
+	DefendResult defend(Organism *attacker) override;
+
 	void draw() override;
 };
 

@@ -4,12 +4,14 @@
 
 class Dandelion : public Plant {
 public:
-	Dandelion(World* world, Position pos);
+	Dandelion(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
 
 	void action() override;
+
 	void draw() override;
 };
-
 
 
 #endif //PROJEKT1_DANDELION_H

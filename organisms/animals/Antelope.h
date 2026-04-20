@@ -4,10 +4,14 @@
 
 class Antelope : public Animal {
 public:
-	Antelope(World* world, Position pos);
+	Antelope(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
 
 	void action() override;
-	DefendResult defend(Organism* attacker) override;
+
+	DefendResult defend(Organism *attacker) override;
+
 	void draw() override;
 };
 

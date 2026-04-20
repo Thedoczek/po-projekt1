@@ -4,12 +4,16 @@
 
 class Human : public Animal {
 public:
-	Human(World* world, Position pos);
+	Human(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
 
 	void action() override;
-	DefendResult defend(Organism* attacker) override;
 
-	void draw() override {}
+	DefendResult defend(Organism *attacker) override;
+
+	void draw() override {
+	}
 
 private:
 	int ability_last_used;

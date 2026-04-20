@@ -4,7 +4,10 @@
 
 class Sheep : public Animal {
 public:
-	Sheep(World* world, Position pos);
+	Sheep(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
+
 	void draw() override;
 };
 

@@ -8,14 +8,13 @@ Animal::Animal(
 }
 
 void Animal::action() {
-	if (const Position new_pos = generate_neighbour_space(1); pos != new_pos) {
+	if (const Position new_pos = pick_neighbor(1); pos != new_pos) {
 		// ReSharper disable once CppTooWideScopeInitStatement
 		Organism *occupant = world->get_occupant(new_pos);
 
 		switch (occupant ? occupant->defend(this) : DefendResult::MOVE_ATTACKER) {
 			case DefendResult::MOVE_ATTACKER:
-				pos.x = new_pos.x;
-				pos.y = new_pos.y;
+				pos = new_pos;
 				break;
 			case DefendResult::STOP_ATTACKER:
 				break;
@@ -24,16 +23,12 @@ void Animal::action() {
 				break;
 			case DefendResult::GIVE_3_STRENGTH:
 				strength += 3;
-				pos.x = new_pos.x;
-				pos.y = new_pos.y;
+				pos = new_pos;
 				break;
 		}
 	}
 
 	if (alive) {
 		age += 1;
-		world->add_survivor(this);
-	} else {
-		world->add_killed(this);
 	}
 }

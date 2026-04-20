@@ -8,9 +8,12 @@
 
 class Guarana : public Plant {
 public:
-	Guarana(World* world, Position pos);
+	Guarana(World *world, Position pos);
 
-	DefendResult defend(Organism* attacker) override;
+	[[nodiscard]] Organism *spawn(Position pos) const override;
+
+	DefendResult defend(Organism *attacker) override;
+
 	void draw() override;
 };
 

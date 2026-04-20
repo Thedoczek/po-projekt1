@@ -4,8 +4,12 @@
 
 class Fox : public Animal {
 public:
-	Fox(World* world, Position pos);
+	Fox(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
+
 	void action() override;
+
 	void draw() override;
 };
 

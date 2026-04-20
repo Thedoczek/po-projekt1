@@ -4,7 +4,10 @@
 
 class Wolf : public Animal {
 public:
-	Wolf(World* world, Position pos);
+	Wolf(World *world, Position pos);
+
+	[[nodiscard]] Organism *spawn(Position pos) const override;
+
 	void draw() override;
 };
 
