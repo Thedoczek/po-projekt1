@@ -1,8 +1,11 @@
 #ifndef PROJEKT1_WORLD_H
 #define PROJEKT1_WORLD_H
+#include <string>
 #include <vector>
+#include "Position.h"
 
-#include "Organism.h"
+
+class Organism;
 
 class World {
 public:
@@ -22,11 +25,16 @@ public:
 
 	void move_organism(Organism *organism, Position new_pos);
 
+	void write_to_log(const std::string &s);
+
+	void populate_world();
+
 	~World();
 
 private:
 	std::vector<Organism *> queue;
-	Organism **map;
+	std::vector<std::string> log;
+	Organism * *map;
 	int size_x;
 	int size_y;
 };

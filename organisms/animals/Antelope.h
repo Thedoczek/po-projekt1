@@ -12,7 +12,9 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override;
+	[[nodiscard]] char get_symbol() const override {
+		return 'A';
+	};
 };
 
 #endif //PROJEKT1_ANTELOPE_H

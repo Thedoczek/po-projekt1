@@ -12,7 +12,8 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override {
+	[[nodiscard]] char get_symbol() const override {
+		return 'H';
 	}
 
 private:

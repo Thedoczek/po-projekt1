@@ -10,7 +10,9 @@ public:
 
 	void action() override;
 
-	void draw() override;
+	[[nodiscard]] char get_symbol() const override {
+		return 'd';
+	};
 };
 
 

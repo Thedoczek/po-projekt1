@@ -8,7 +8,9 @@ public:
 
 	[[nodiscard]] Organism *spawn(Position pos) const override;
 
-	void draw() override;
+	[[nodiscard]] char get_symbol() const override {
+		return ',';
+	};
 };
 
 #endif //PROJEKT1_GRASS_H

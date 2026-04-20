@@ -1,4 +1,5 @@
 #include "Grass.h"
+#include "../../World.h"
 
 Grass::Grass(World *world, const Position pos) : Plant(world, pos, 0) {
 }

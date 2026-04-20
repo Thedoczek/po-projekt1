@@ -12,7 +12,9 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override;
+	[[nodiscard]] char get_symbol() const override {
+		return 'T';
+	};
 };
 
 #endif //PROJEKT1_TURTLE_H

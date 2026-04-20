@@ -1,7 +1,3 @@
-//
-// Created by doczek on 19.04.2026.
-//
-
 #ifndef PROJEKT1_GUARANA_H
 #define PROJEKT1_GUARANA_H
 #include "../Plant.h"
@@ -14,7 +10,9 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override;
+	[[nodiscard]] char get_symbol() const override {
+		return 'g';
+	};
 };
 
 #endif //PROJEKT1_GUARANA_H

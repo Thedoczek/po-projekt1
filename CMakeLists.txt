@@ -3,6 +3,8 @@ project(projekt1)
 
 set(CMAKE_CXX_STANDARD 20)
 
+find_package(Curses REQUIRED)
+
 add_executable(projekt1 main.cpp
         World.cpp
         World.h
@@ -35,3 +37,5 @@ add_executable(projekt1 main.cpp
         organisms/plants/SosnowskyHogweed.cpp
         organisms/plants/SosnowskyHogweed.h
         Position.h)
+
+target_link_libraries(projekt1 PRIVATE ${CURSES_LIBRARIES})

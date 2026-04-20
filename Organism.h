@@ -2,7 +2,8 @@
 #define PROJEKT1_ORGANISM_H
 
 #include "Position.h"
-#include "World.h"
+
+class World;
 
 class Organism {
 public:
@@ -21,7 +22,7 @@ public:
 
 	virtual DefendResult defend(Organism *attacker) = 0;
 
-	virtual void draw() = 0;
+	[[nodiscard]] virtual char get_symbol() const = 0;
 
 	[[nodiscard]] Position get_pos() const;
 

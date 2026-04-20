@@ -1,6 +1,7 @@
 #ifndef PROJEKT1_SOSNOWSKY_HOGWEED_H
 #define PROJEKT1_SOSNOWSKY_HOGWEED_H
 #include "../Plant.h"
+#include "../../World.h"
 
 class SosnowskyHogweed : public Plant {
 public:
@@ -12,7 +13,9 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override;
+	[[nodiscard]] char get_symbol() const override {
+		return 's';
+	};
 };
 
 #endif //PROJEKT1_SOSNOWSKY_HOGWEED_H

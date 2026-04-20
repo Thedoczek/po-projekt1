@@ -30,5 +30,6 @@ void SosnowskyHogweed::action() {
 
 Organism::DefendResult SosnowskyHogweed::defend(Organism *attacker) {
 	alive = false;
+	world->write_to_log("  Eat at " + std::to_string(pos.x) + ", " + std::to_string(pos.y));
 	return DefendResult::KILL_ATTACKER;
 }

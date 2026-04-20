@@ -1,4 +1,5 @@
 #include "Wolf.h"
+#include "../../World.h"
 
 Wolf::Wolf(World *world, const Position pos) : Animal(world, pos, 9, 5) {
 }

@@ -1,4 +1,5 @@
 #include "Fox.h"
+#include "../../World.h"
 
 #include <typeinfo>
 

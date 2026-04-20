@@ -10,7 +10,7 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override = 0;
+	[[nodiscard]] char get_symbol() const override = 0;
 };
 
 #endif //PROJEKT1_ANIMAL_H

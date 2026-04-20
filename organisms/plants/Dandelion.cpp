@@ -1,4 +1,5 @@
 #include "Dandelion.h"
+#include "../../World.h"
 
 Dandelion::Dandelion(World *world, const Position pos) : Plant(world, pos, 0) {
 }

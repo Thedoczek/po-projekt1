@@ -1,6 +1,9 @@
 #include "Organism.h"
+#include "World.h"
 
 #include <random>
+#include <algorithm>
+#include <string>
 
 Organism::Organism(
 	World *const world, const Position pos, const int strength, const int initiative) : strength(strength),

@@ -2,7 +2,7 @@
 #define PROJEKT1_PLANT_H
 #include "../Organism.h"
 
-#define PLANT_SPREAD_FACTOR 10	// One in N attempts are a success.
+#define PLANT_SPREAD_FACTOR 40	// One in N attempts are a success.
 
 class Plant : public Organism {
 public:
@@ -12,7 +12,7 @@ public:
 
 	DefendResult defend(Organism *attacker) override;
 
-	void draw() override = 0;
+	[[nodiscard]] char get_symbol() const override = 0;
 };
 
 #endif //PROJEKT1_PLANT_H
