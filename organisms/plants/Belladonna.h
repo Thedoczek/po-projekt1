@@ -4,7 +4,7 @@
 
 class Belladonna : public Plant {
 public:
-	Belladonna(World* world, int pos_x, int pos_y);
+	Belladonna(World* world, Position pos);
 
 	DefendResult defend(Organism* attacker) override;
 	void draw() override;

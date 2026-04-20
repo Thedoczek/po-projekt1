@@ -1,3 +1,3 @@
 #include "Turtle.h"
 
-Turtle::Turtle(World* world, int pos_x, int pos_y) : Animal(world, pos_x, pos_y, 2, 1) {}
+Turtle::Turtle(World* world, Position pos) : Animal(world, pos, 2, 1) {}

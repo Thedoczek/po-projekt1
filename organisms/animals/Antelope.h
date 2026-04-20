@@ -4,7 +4,7 @@
 
 class Antelope : public Animal {
 public:
-	Antelope(World* world, int pos_x, int pos_y);
+	Antelope(World* world, Position pos);
 
 	void action() override;
 	DefendResult defend(Organism* attacker) override;

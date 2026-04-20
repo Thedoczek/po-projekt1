@@ -4,7 +4,7 @@
 
 class Wolf : public Animal {
 public:
-	Wolf(World* world, int pos_x, int pos_y);
+	Wolf(World* world, Position pos);
 	void draw() override;
 };
 

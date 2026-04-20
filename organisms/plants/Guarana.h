@@ -8,7 +8,7 @@
 
 class Guarana : public Plant {
 public:
-	Guarana(World* world, int pos_x, int pos_y);
+	Guarana(World* world, Position pos);
 
 	DefendResult defend(Organism* attacker) override;
 	void draw() override;

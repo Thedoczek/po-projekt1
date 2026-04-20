@@ -31,8 +31,8 @@ void World::perform_turn() {
 	next_queue.clear();
 }
 
-Organism* World::get_occupant(const int pos_x, const int pos_y) const {
-	return map[pos_x*size_y + pos_y];
+Organism* World::get_occupant(const Position pos) const {
+	return map[pos.x*size_y + pos.y];
 }
 
 int World::get_size_x() const {
@@ -50,9 +50,12 @@ void World::add_killed(Organism *organism) {
 	kill_queue.push_back(organism);
 }
 
-void World::move_organism(Organism* organism, const int new_x, const int new_y) {
-	map[new_x*size_y + new_y] = organism;
-	map[organism->get_pos_x()*size_y + organism->get_pos_y()] = nullptr;
+// ReSharper disable once CppMemberFunctionMayBeConst
+void World::move_organism(Organism* organism, const Position new_pos) {
+	// ReSharper disable once CppUseStructuredBinding
+	Position const old_pos = organism->get_pos();
+	map[new_pos.x*size_y + new_pos.y] = organism;
+	map[old_pos.x*size_y + old_pos.y] = nullptr;
 }
 
 World::~World() {

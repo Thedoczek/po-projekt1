@@ -4,11 +4,13 @@
 
 class Human : public Animal {
 public:
-	Human(World* world, int pos_x, int pos_y);
+	Human(World* world, Position pos);
 
 	void action() override;
 	DefendResult defend(Organism* attacker) override;
-	void draw() override;
+
+	void draw() override {}
+
 private:
 	int ability_last_used;
 };

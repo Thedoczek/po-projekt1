@@ -4,7 +4,7 @@
 
 class Sheep : public Animal {
 public:
-	Sheep(World* world, int pos_x, int pos_y);
+	Sheep(World* world, Position pos);
 	void draw() override;
 };
 

@@ -1,6 +1,7 @@
 #ifndef PROJEKT1_ORGANISM_H
 #define PROJEKT1_ORGANISM_H
 
+#include "Position.h"
 #include "World.h"
 
 class Organism {
@@ -12,27 +13,25 @@ public:
 		GIVE_3_STRENGTH
 	};
 
-	Organism(World* world, int pos_x, int pos_y, int strength, int initiative);
+	Organism(World* world, Position pos, int strength, int initiative);
 	virtual void action() = 0;
-	virtual void attack(int pos_x, int pos_y) = 0;
-	virtual DefendResult defend(Organism* attacker) = 0;
+	virtual DefendResult defend(Organism* attacker);
 	virtual void draw() = 0;
 
-	int get_pos_x() const;
-	int get_pos_y() const;
-	int get_initiative() const;
-	int get_age() const;
-	bool is_alive() const;
+	[[nodiscard]] Position get_pos() const;
+	[[nodiscard]] int get_initiative() const;
+	[[nodiscard]] int get_age() const;
+	[[nodiscard]] bool is_alive() const;
 
 	virtual ~Organism() = default;
 
 protected:
+	[[nodiscard]] Position generate_neighbour_space(int radius) const;
 	bool alive = true;
 	int strength;
 	int initiative;
 	int age = 0;
-	int pos_x;
-	int pos_y;
+	Position pos;
 	World* world;
 };
 

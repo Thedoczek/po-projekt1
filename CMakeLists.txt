@@ -33,4 +33,5 @@ add_executable(projekt1 main.cpp
         organisms/plants/Belladonna.cpp
         organisms/plants/Belladonna.h
         organisms/plants/SosnowskyHogweed.cpp
-        organisms/plants/SosnowskyHogweed.h)
+        organisms/plants/SosnowskyHogweed.h
+        Position.h)

@@ -6,20 +6,20 @@
 
 class World {
 public:
-	World(int width, int height);
+	World(int size_x, int size_y);
 
 	void perform_turn();
 	void draw_world();
 
-	Organism* get_occupant(int pos_x, int pos_y) const;
+[[nodiscard]] 	Organism* get_occupant(Position pos) const;
 
 	int get_size_x() const;
-	int get_size_y() const;
+	[[nodiscard]] int get_size_y() const;
 
 	void add_survivor(Organism* organism);
 	void add_killed(Organism* organism);
 
-	void move_organism(Organism *organism, int new_x, int new_y);
+	void move_organism(Organism *organism, Position new_pos);
 
 	~World();
 private:

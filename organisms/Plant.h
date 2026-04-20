@@ -4,11 +4,9 @@
 
 class Plant : public Organism {
 public:
-	Plant(World* world, int pos_x, int pos_y, int strength);
+	Plant(World* world, Position pos, int strength);
 
 	void action() override;
-	void attack(int pos_x, int pos_y) override;
-	DefendResult defend(Organism* attacker) override;
 	void draw() override = 0;
 };
 

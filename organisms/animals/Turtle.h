@@ -4,7 +4,7 @@
 
 class Turtle : public Animal {
 public:
-	Turtle(World* world, int pos_x, int pos_y);
+	Turtle(World* world, Position pos);
 
 	void action() override;
 	DefendResult defend(Organism* attacker) override;
