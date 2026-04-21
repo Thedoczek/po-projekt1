@@ -47,6 +47,7 @@ void Human::action() {
 				if (age - ability_last_used >= 10) {
 					ability_last_used = age;
 					world->write_to_log("Ability active");
+					world->draw_world();
 				}
 				break;
 			default:

@@ -33,7 +33,7 @@ int main() {
 
 	world.populate_world();
 
-	while (human->is_alive()) {
+	while (world.is_human_alive()) {
 		world.perform_turn();
 	}
 

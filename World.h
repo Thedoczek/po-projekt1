@@ -29,6 +29,8 @@ public:
 
 	void populate_world();
 
+	[[nodiscard]] bool is_human_alive() const;
+
 	~World();
 
 private:

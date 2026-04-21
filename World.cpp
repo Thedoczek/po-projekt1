@@ -156,6 +156,15 @@ void World::populate_world() {
 	}
 }
 
+bool World::is_human_alive() const {
+	for (const Organism *org: queue) {
+		if (org->get_symbol() == 'H') {
+			return org->is_alive();
+		}
+	}
+	return false;
+}
+
 World::~World() {
 	for (const Organism *elem: queue) {
 		delete elem;
